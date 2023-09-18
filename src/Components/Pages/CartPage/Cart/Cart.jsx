@@ -17,10 +17,11 @@ export const Cart = ({ cartItems, goodsList }) => {
   return (
     <section className={s.cart}>
       <Container>
-        <h2 className={s.title}>Корзина</h2>
+
 
         {cartItems.length ? (
           <>
+                  <h2 className={s.title}>Корзина</h2>
             <ul className={s.list}>
               {cartItems.map((item) => (
                 <li
