@@ -3,7 +3,9 @@ import { Goods } from "../../Goods/Goods.jsx";
 import { useEffect } from "react";
 import { fetchCategory } from "../../../features/goodsSlice.js";
 import { usePageFromSearchParams } from "../../../hooks/usePageFromSearchParams.js";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import s from "./FavoritePage.module.scss";
+import { Container } from "../../Layout/Container/Container.jsx";
 
 export const FavoritePage = () => {
   const navigate = useNavigate();
@@ -31,6 +33,11 @@ export const FavoritePage = () => {
   return favorites.length ? (
     <Goods title="Избранное" />
   ) : (
-    <h3>Вы ничего не добавили в избранное</h3>
+    <Container className={s.centeredContainer}>
+        <h3 className={s.empty}>Вы ничего не добавили в избранное</h3>
+        <NavLink className={s.btn} to="/">
+          Начать покупки
+        </NavLink>
+      </Container>
   );
 };

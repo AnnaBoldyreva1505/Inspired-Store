@@ -31,7 +31,7 @@ export const CartItem = ({ id, color, size, count, goodsList }) => {
 
       <div className={s.content}>
         <h3 className={s.title}>{item?.title}</h3>
-        <p className={s.price}>руб {item?.price}</p>
+        <p className={s.price}>₸ {item?.price}</p>
         <div className={s.vendorCode}>
           <span className={s.subtitle}>Артикул</span>
           <span>{id}</span>

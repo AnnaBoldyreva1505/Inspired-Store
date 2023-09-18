@@ -86,7 +86,7 @@ export const ProductPage = () => {
               <Form className={s.content}>
                 <h2 className={s.title}>{product.title}</h2>
 
-                <p className={s.price}>руб {product.price}</p>
+                <p className={s.price}>₸ {product.price}</p>
 
                 <div className={s.vendorCode}>
                   <span className={s.subtitle}>Артикул</span>

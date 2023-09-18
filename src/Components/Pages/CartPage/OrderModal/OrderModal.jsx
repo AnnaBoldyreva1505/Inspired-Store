@@ -75,7 +75,7 @@ export const OrderModal = () => {
 
         <div className={s.total}>
           <p>Итого:</p>
-          <p>руб {totalPrice}</p>
+          <p>₸ {totalPrice}</p>
         </div>
 
         <button className={s.close} onClick={handleCloseModal}></button>
