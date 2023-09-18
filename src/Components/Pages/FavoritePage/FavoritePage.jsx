@@ -6,6 +6,7 @@ import { usePageFromSearchParams } from "../../../hooks/usePageFromSearchParams.
 import { NavLink, useNavigate } from "react-router-dom";
 import s from "./FavoritePage.module.scss";
 import { Container } from "../../Layout/Container/Container.jsx";
+import { removeFromFavorite } from "../../../features/favoritesSlice.js";
 
 export const FavoritePage = () => {
   const navigate = useNavigate();
@@ -30,8 +31,25 @@ export const FavoritePage = () => {
     }
   }, [page, favorites, navigate, dispatch]);
 
+    const clearFavorites = () => {
+    favorites.forEach((id) => {
+      dispatch(removeFromFavorite({ id }));
+    });
+
+    localStorage.removeItem("favorites");
+  };
+
   return favorites.length ? (
-    <Goods title="Избранное" />
+    <>
+          <Goods title="Избранное" />
+      <Container className={s.centeredContainer}>
+        <br />
+        <button className={s.btn} type="button" onClick={clearFavorites}>
+          Удалить все
+        </button>
+      </Container>
+    </>
+
   ) : (
     <Container className={s.centeredContainer}>
       <h3 className={s.empty}>Вы ничего не добавили в избранное</h3>
