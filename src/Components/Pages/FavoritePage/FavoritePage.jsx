@@ -34,10 +34,11 @@ export const FavoritePage = () => {
     <Goods title="Избранное" />
   ) : (
     <Container className={s.centeredContainer}>
-        <h3 className={s.empty}>Вы ничего не добавили в избранное</h3>
-        <NavLink className={s.btn} to="/">
-          Начать покупки
-        </NavLink>
-      </Container>
+      <Goods title="Избранное" />
+      <h3 className={s.empty}>Вы ничего не добавили в избранное</h3>
+      <NavLink className={s.btn} to="/">
+        Начать покупки
+      </NavLink>
+    </Container>
   );
 };
